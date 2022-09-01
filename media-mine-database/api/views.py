@@ -147,8 +147,8 @@ def getrecommendationLike():
             else:
                 vector[i]=vector[i]+0.1
 
-        #column=np.array(["acousticness","danceability","energy","instrumentalness","speechiness","tempo","valence"])
-        vc = pd.Series(vector,dtype='float64')
+        column=np.array(["acousticness","danceability","energy","instrumentalness","speechiness","tempo","valence"])
+        vc = pd.Series(vector,index=column, dtype='float64')
         for i in range(len(vc)):
             print(vc[i])
         store_rec(vc) 
@@ -195,8 +195,8 @@ def getrecommendationDislike():
                 vector[i]=vector[i]+0.1
 
                      
-        #column=np.array(["acousticness","danceability","energy","instrumentalness","speechiness","tempo","valence"])
-        vc = pd.Series(vector,dtype='float64')
+        column=np.array(["acousticness","danceability","energy","instrumentalness","speechiness","tempo","valence"])
+        vc = pd.Series(vector,index=column,dtype='float64')
         for i in range(len(vc)):
             print(vc[i])
         store_rec(vc) 
